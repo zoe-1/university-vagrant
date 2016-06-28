@@ -83,6 +83,7 @@ sudo cp /vagrant/bootstrap/hostsFile /etc/hosts
 
 #
 # intall couchdb 
+# For details see: https://launchpad.net/~couchdb/+archive/ubuntu/stable
 #
 
 apt-get install -y software-properties-common
