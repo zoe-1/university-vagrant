@@ -78,6 +78,7 @@ sudo ufw allow ssh
 sudo ufw allow 5984
 sudo ufw allow 8000
 sudo ufw allow 8001
+sudo ufw allow 8080
 
 sudo cp /vagrant/bootstrap/hostsFile /etc/hosts
 
@@ -113,3 +114,30 @@ sudo restart couchdb
 
 npm install npm@latest -g
 # npm install -g npm@3
+
+#
+# install rethinkdb
+#
+
+source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+
+wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
+
+sudo apt-get update
+
+sudo apt-get install -y rethinkdb
+
+sudo cp /vagrant/bootstrap/rethinkdbInstance.conf /etc/rethinkdb/instances.d/instance1.conf
+
+sudo chown rethinkdb:rethinkdb /etc/rethinkdb/instances.d/instance1.conf
+
+# configured to allow access from all hosts 0.0.0.0.
+# Must do to allow host computer to have access. 
+# web interface accessed at: localhost:8080 port forwarding configured for host too.
+# host    guest
+# 8080 -> 8080
+sudo chmod 0755 /etc/rethinkdb/instances.d/instance1.conf
+
+sudo /etc/init.d/rethinkdb restart
+
+# npm install rethinkdb -g
