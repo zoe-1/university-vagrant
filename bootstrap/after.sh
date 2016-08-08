@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
 # execute this in the guest VM (cd /vagrant).
+# DO NOT EXECUTE ON HOST COMPUTER 
 # (./bootstrap/after.sh)
 # configure stuff after original provision completes.
 # 
@@ -22,6 +23,12 @@ git clone https://github.com/hapijs/university.git
 cd /home/vagrant/university
 
 ls -la
+
+# change server host configs to use: 0.0.0.0
+
+sed "s/\(^.*host:\)\(.*'\)\(.*\)'/\1 '0.0.0.0'/" < "./lib/start.js" > "./lib/devStart.js"
+
+mv "./lib/devStart.js" "./lib/start.js"
 
 # configure git for me
 

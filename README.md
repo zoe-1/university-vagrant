@@ -22,7 +22,7 @@
     to allow host to access the web interface at: localhost:8080.
 
 - #### nvm
-    installs latest stable nodejs 4.4.6.
+    installs latest stable nodejs 4.4.7.
     - npm version 3
     - clones hapijs/university into /home/vagrant/university
     - ufw ports
@@ -42,7 +42,7 @@
     for Guest machine to allow connections from other computers.
     In other words, your HOST computer will not be able to access the guest VM
     if 0.0.0.0 is not configured as described below. The guest will refuse connections
-    because they are not from localhost.
+    because they are not from localhost. Script will configure below except for the hapi server.
     * localhost /etc/hosts file configured to 0.0.0.0
     * /etc/couchdb/local.ini configured to 0.0.0.0
     * /etc/rethinkdb/instances.d/instance1.conf configured to 0.0.0.0
