@@ -127,6 +127,8 @@ sudo apt-get update
 
 sudo apt-get install -y rethinkdb
 
+sudo /etc/init.d/rethinkdb restart
+
 sudo cp /vagrant/bootstrap/rethinkdbInstance.conf /etc/rethinkdb/instances.d/instance1.conf
 
 sudo chown rethinkdb:rethinkdb /etc/rethinkdb/instances.d/instance1.conf
@@ -138,6 +140,8 @@ sudo chown rethinkdb:rethinkdb /etc/rethinkdb/instances.d/instance1.conf
 # 8080 -> 8080
 sudo chmod 0755 /etc/rethinkdb/instances.d/instance1.conf
 
+# restart with new credentials
+
 sudo /etc/init.d/rethinkdb restart
 
-# npm install rethinkdb -g
+npm install rethinkdb -g
