@@ -63,10 +63,10 @@ command -v nvm
 
 . /home/vagrant/.nvm/nvm.sh
 
-nvm install v4.4.6
+nvm install v4.4.7
 
-nvm use 4.4.6
-nvm alias default 4.4.6
+nvm use 4.4.7
+nvm alias default 4.4.7
 echo $HOME
 
 #
