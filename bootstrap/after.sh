@@ -14,15 +14,17 @@ if [[ $argument == "couchdb_admin" ]]; then
     curl -X 'PUT' "localhost:5984/_config/admins/waka" -d '"wakatime"'
 fi
 
-sudo chown -R vagrant:vagrant /home/vagrant/.nvm
+# sudo chown -R vagrant:vagrant /home/vagrant/.nvm
 
 # load university
 
-cd /home/vagrant
+mkdir -p /home/vagrant/Workspace/projects
+
+cd /home/vagrant/Workspace/projects
 
 git clone https://github.com/hapijs/university.git
 
-cd /home/vagrant/university
+cd /home/vagrant/Workspace/projects/university
 
 ls -la
 
@@ -38,4 +40,3 @@ git config --global core.editor vim
 git config --global user.name "Jon Swenson"
 git config --global user.email "jswenson74@gmail.com"
 
-# npm install -g rethinkdb
