@@ -113,7 +113,7 @@ sudo restart couchdb
 # install npm 3
 
 sudo chown -R vagrant:vagrant /home/vagrant/.nvm
-npm install npm@latest -g
+npm install npm@3.10.8 -g
 
 #
 # install rethinkdb
