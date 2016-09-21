@@ -27,8 +27,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 5984, host: 8984 
   config.vm.network "forwarded_port", guest: 8000, host: 8000 
   config.vm.network "forwarded_port", guest: 8001, host: 8001 
-  config.vm.network "forwarded_port", guest: 8000, host: 9000 
-  config.vm.network "forwarded_port", guest: 8001, host: 9001 
+  config.vm.network "forwarded_port", guest: 9000, host: 9000 
+  config.vm.network "forwarded_port", guest: 9001, host: 9001 
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # rethinkdb port 
 
   # Create a private network, which allows host-only access to the machine
