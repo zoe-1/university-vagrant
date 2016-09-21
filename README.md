@@ -33,9 +33,18 @@
 - #### port forwarding
     * HOST      GUEST
     * 8984  ->  5984
-    * 8090  ->  8000
-    * 8091  ->  8001
+    * 8000  ->  8000
+    * 8001  ->  8001
+    * 9000  ->  9000
+    * 9001  ->  9001
     * 8080  ->  8080
+
+- #### NOTES ABOUT PORTS: 
+      - 8000(1) webserver
+      - 9000(1) api
+      - 8984    couchdb 
+      - 8080    rethinkdb
+
 
 - #### hosts configs
     Note: must use 0.0.0.0 with couchdb, rethinkdb, and hapi server

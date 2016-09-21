@@ -78,6 +78,8 @@ sudo ufw allow ssh
 sudo ufw allow 5984
 sudo ufw allow 8000
 sudo ufw allow 8001
+sudo ufw allow 9000
+sudo ufw allow 9001
 sudo ufw allow 8080
 
 sudo cp /vagrant/bootstrap/hostsFile /etc/hosts
