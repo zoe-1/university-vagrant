@@ -35,3 +35,5 @@ mv "./lib/devStart.js" "./lib/start.js"
 git config --global core.editor vim
 git config --global user.name "Jon Swenson"
 git config --global user.email "jswenson74@gmail.com"
+
+npm install -g rethinkdb

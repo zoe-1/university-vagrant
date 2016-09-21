@@ -63,10 +63,10 @@ command -v nvm
 
 . /home/vagrant/.nvm/nvm.sh
 
-nvm install v4.4.7
+nvm install v4.5.0
 
-nvm use 4.4.7
-nvm alias default 4.4.7
+nvm use 4.5.0
+nvm alias default 4.5.0
 echo $HOME
 
 #
@@ -112,8 +112,8 @@ sudo restart couchdb
 
 # install npm 3
 
+sudo chown -R vagrant:vagrant /home/vagrant/.nvm
 npm install npm@latest -g
-# npm install -g npm@3
 
 #
 # install rethinkdb
@@ -123,7 +123,7 @@ source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_
 
 wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
 
-sudo apt-get update
+sudo apt-get update -y
 
 sudo apt-get install -y rethinkdb
 
@@ -134,14 +134,22 @@ sudo cp /vagrant/bootstrap/rethinkdbInstance.conf /etc/rethinkdb/instances.d/ins
 sudo chown rethinkdb:rethinkdb /etc/rethinkdb/instances.d/instance1.conf
 
 # configured to allow access from all hosts 0.0.0.0.
-# Must do to allow host computer to have access. 
+# Must do to allow host computer to have access.
 # web interface accessed at: localhost:8080 port forwarding configured for host too.
 # host    guest
 # 8080 -> 8080
 sudo chmod 0755 /etc/rethinkdb/instances.d/instance1.conf
 
+sudo apt-get update -y
+
+# install pip for python to install drivers.
+sudo apt-get install python-pip
+
+# install rethinkdb python driver required by
+# rethinkdb to make backups using dump command.
+sudo pip install rethinkdb
+
 # restart with new credentials
 
 sudo /etc/init.d/rethinkdb restart
 
-npm install rethinkdb -g

@@ -49,3 +49,5 @@
     * hapi server manifest needs to be configured to: 0.0.0.0.
       script does not configure it.
 
+- #### list process using port 
+    lsof -i:8984
