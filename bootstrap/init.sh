@@ -38,10 +38,15 @@ git clone https://github.com/maksimr/vim-jsbeautify.git /home/vagrant/.vim/bundl
 mkdir -p /home/vagrant/.vim/bundle/vim-javascript
 git clone https://github.com/pangloss/vim-javascript.git /home/vagrant/.vim/bundle/vim-javascript
 
+wget -O /home/vagrant/.vim/bundle/Conque.tar.gz http://www.vim.org/scripts/download_script.php?src_id=16251
+tar -xf /home/vagrant/.vim/bundle/Conque.tar.gz -C /home/vagrant/.vim/bundle/
+
+sudo chown -R vagrant:vagrant /home/vagrant/.vim
+
 # install nvm
 
 mkdir /home/vagrant/.nvm
-sudo chown vagrant:vagrant /home/vagrant/.nvm
+sudo chown -R vagrant:vagrant /home/vagrant/.nvm
 
 echo "---------"
 echo $HOME
@@ -89,28 +94,28 @@ sudo cp /vagrant/bootstrap/hostsFile /etc/hosts
 # For details see: https://launchpad.net/~couchdb/+archive/ubuntu/stable
 #
 
-apt-get install -y software-properties-common
-
-add-apt-repository -y ppa:couchdb/stable
-
-apt-get update -y
-
-apt-get remove couchdb couchdb-bin couchdb-common -yf
-
-apt-get install -Vy couchdb
-
-#
-# configure hosts to allow port forwarding.
-# # sudo echo "bind_address = 0.0.0.0" >> /etc/couchdb/local.ini
-
-sudo chown vagrant:vagrant /etc/couchdb/local.ini
-sudo chown vagrant:vagrant /etc/couchdb/
-
-sed "s/;bind_address = 127.0.0.1/;bind_address = 127.0.0.1 \n; @note allow remotes for port forwarding. \nbind_address = 0.0.0.0/" < "/etc/couchdb/local.ini" > "/home/vagrant/sed_output"
-
-mv "/home/vagrant/sed_output" "/etc/couchdb/local.ini"
-
-sudo restart couchdb
+# apt-get install -y software-properties-common
+# 
+# add-apt-repository -y ppa:couchdb/stable
+# 
+# apt-get update -y
+# 
+# apt-get remove couchdb couchdb-bin couchdb-common -yf
+# 
+# apt-get install -Vy couchdb
+# 
+# #
+# # configure hosts to allow port forwarding.
+# # # sudo echo "bind_address = 0.0.0.0" >> /etc/couchdb/local.ini
+# 
+# sudo chown vagrant:vagrant /etc/couchdb/local.ini
+# sudo chown vagrant:vagrant /etc/couchdb/
+# 
+# sed "s/;bind_address = 127.0.0.1/;bind_address = 127.0.0.1 \n; @note allow remotes for port forwarding. \nbind_address = 0.0.0.0/" < "/etc/couchdb/local.ini" > "/home/vagrant/sed_output"
+# 
+# mv "/home/vagrant/sed_output" "/etc/couchdb/local.ini"
+# 
+# sudo restart couchdb
 
 # install npm 3
 
