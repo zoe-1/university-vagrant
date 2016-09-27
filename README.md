@@ -9,11 +9,15 @@
     * vim-stylus
     * vim-jsbeautify
     * vim-javascript
+    * conque - run interactive shells in vim buffer. 
+    * taboo.vim - rename tabs 
 
 - #### git
     configured for my user (bootstrap/after.sh).
 
 - #### couchdb
+    [removed]
+    need to write script to load couchdb 2.0.
     admin user loaded.
     bootstrap/after.sh provides the admin user.
 
