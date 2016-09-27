@@ -38,6 +38,9 @@ git clone https://github.com/maksimr/vim-jsbeautify.git /home/vagrant/.vim/bundl
 mkdir -p /home/vagrant/.vim/bundle/vim-javascript
 git clone https://github.com/pangloss/vim-javascript.git /home/vagrant/.vim/bundle/vim-javascript
 
+mkdir -p /home/vagrant/.vim/bundle/taboo.vim
+git clone https://github.com/gcmt/taboo.vim.git /home/vagrant/.vim/bundle/taboo.vim
+
 wget -O /home/vagrant/.vim/bundle/Conque.tar.gz http://www.vim.org/scripts/download_script.php?src_id=16251
 tar -xf /home/vagrant/.vim/bundle/Conque.tar.gz -C /home/vagrant/.vim/bundle/
 
